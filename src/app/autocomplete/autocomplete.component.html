@@ -1,8 +1,7 @@
 
-<input type='text' list='concepts'/>
-<datalist id = 'concepts'>
-  <option>Module</option>
-  <option>Component</option>
-  <option>Service</option>
-  <option>Router</option>
+<label for='my-autocomplete'>Concepts : </label><input id = 'my-autocomplete' [(ngModel)] = 'conceptValue' (change)='saveConcept($event)'type='text' list='conceptList'/>
+<datalist id = 'conceptList'>
+ <option *ngFor='let concept of concepts' [value]=concept.name>{{concept.name}} </option>
+
+
 </datalist>
